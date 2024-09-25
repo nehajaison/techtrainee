@@ -1,0 +1,131 @@
+body {
+    background-image: url('../images/bglogin.jpg');
+    background-position: center;
+    /* Scale and zoom in the image */
+    background-size: cover;
+    /* Add position: relative to enable absolutely positioned elements inside the image (place text) */
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    height: 100vh;
+    flex-direction: column;
+    margin:0px 0px;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: padding-box;
+}
+p{
+
+    padding:10px;
+}
+.tos{
+    padding:10px 10px !important;
+    margin:0px 0px;
+    font-size: 12px;
+    font-style: italic;
+}
+.links{
+
+    text-align: center;
+    font-size: 12px;
+    padding: 0px;
+    margin:0px;
+}
+
+form {
+    width: 40%;
+    height:100%;
+    border: 3px solid rgb(133, 133, 133);
+    padding: 20px;
+    background: rgb(255, 255, 255);
+   
+}
+
+h2 {
+    text-align: left;
+    margin-bottom: 10px;
+    margin-top: 70px;
+    padding:10px;
+}
+.signupheading{
+    text-align: left;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding-left:10px;
+    padding-top:0px;
+
+}
+
+input {
+    display: block;
+    border: 2px solid #ccc;
+    width: 95%;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+.checkboxs{
+    display: block;
+    border: none;
+    float:left;
+    width: auto !important;
+    padding: 0px;
+    margin: 0px auto;
+}
+
+label {
+    color: #000000;
+    font-size: 18px;
+    padding: 10px;
+}
+
+
+button {
+   
+    width:99%;
+    background: #3a5b22;
+    padding: 10px;
+    margin: 10px auto;
+    color: #fff;
+    border-radius: 5px;
+   
+    border: none;
+}
+
+button:hover {
+    background: rgb(65, 180, 52);
+}
+
+.error {
+    background: #F2DEDE;
+    color: #0c0101;
+    padding: 10px;
+    width: 95%;
+    border-radius: 5px;
+    margin: 20px auto;
+}
+.success {
+    background: #b7f471;
+    color: #0c0101;
+    padding: 10px;
+    width: 95%;
+    border-radius: 5px;
+    margin: 20px auto;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(240, 239, 239);
+}
+
+a {
+   font-size: 14px;
+   font-weight: bold;
+}
+
+a:hover {
+    opacity: .7;
+}
+
