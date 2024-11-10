@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Unknowns - Student Support Platform</title>
+    <link rel="stylesheet" href="f3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Back Button at Top Left -->
+    <button class="back-btn" onclick="goBack()">← Back</button>
+
+    <div class="content-container">
+        <!-- Header Section -->
+        <header>
+            <h1>Unknowns</h1>
+            <p class="tagline">Helping Students Discover Their Future</p>
+        </header>
+
+        <!-- Main Content Section -->
+        <main>
+            <div class="buttons">
+                <button class="btn btn-hover highlight" onclick="window.location.href='http://localhost:5000'">Talk with Expert</button>
+                <button class="btn btn-hover highlight"onclick="window.location.href='discover.html'">Discover Your Passion</button>
+                
+            </div>
+        </main>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>© 2024 Unknowns | Guiding You to Your Next Step</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript for Back Button -->
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

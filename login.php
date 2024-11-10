@@ -3,12 +3,13 @@
 
 <head>
     <title>LOGIN</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-    <form action="login_check.php" method="post">
-        <img src="images/logon.jpg">
+    <form action="home2.html" method="get">
+
+        
         <h2>Welcome Back !</h2>
         <p>Enter your Credentials to access your account</p>
         <?php if (isset($_GET['error'])) { ?> <p class="error"><?php echo $_GET['error']; ?></p> <?php } ?>

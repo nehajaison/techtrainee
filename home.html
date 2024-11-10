@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Tech Trainee</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .hero {
+      height: 100vh;
+      /* New pink background image from Unsplash */
+      background-image: url('https://images.unsplash.com/photo-1585314659029-d0042fc4b09d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE5fHx8ZW58MHx8fHx8');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for better text visibility */
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; /* Allow for vertical stacking */
+    }
+
+    .content {
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    h1, h2, p {
+      font-style: italic; /* Make font italic */
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+
+    /* Home icon styling */
+    .home-icon {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: white;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .home-icon:hover {
+      color: #ff9900; /* Change color on hover */
+    }
+
+    /* Responsive button styling */
+    .btn {
+      background-color: #ff9900;
+      color: white;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+      max-width: 100%;
+      text-align: center;
+      width: auto;
+      white-space: nowrap; /* Prevent button text from wrapping */
+    }
+
+    .btn:hover {
+      background-color: #e68a00;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.7rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
+
+      .btn {
+        font-size: 1rem;
+        padding: 12px 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .btn {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+        width: 90%; /* Button takes up 90% of the width on small screens */
+        max-width: 300px; /* Ensures button isn't too wide on small screens */
+        margin: 0 auto; /* Centers the button */
+        display: block; /* Ensures button is a block element for small screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="home-icon">
+      <i class="fas fa-home"></i> <!-- Font Awesome home icon -->
+    </div>
+    <div class="overlay">
+      <div class="content">
+        <h1>WELCOME TO TECH TRAINEE, WHERE DREAMS BECOME REALITY!</h1>
+        <h2>Unlock Your Tech Career Potential With Tech Trainee</h2>
+        <p>Can't wait to get started?</p>
+        <a href="http://localhost:8000/login.php">
+          <button>Login/Signup</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

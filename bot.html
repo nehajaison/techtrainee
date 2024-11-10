@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Guide Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .chat-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .chat-messages {
+            flex-grow: 1;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        .message {
+            margin: 10px 0;
+            padding: 10px 15px;
+            border-radius: 15px;
+            max-width: 70%;
+            word-wrap: break-word;
+        }
+        .message-container {
+            margin: 10px 0;
+        }
+        .confidence {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 4px;
+            margin-left: 15px;
+        }
+        .user-message {
+            background-color: #007bff;
+            color: white;
+            margin-left: auto;
+        }
+        .bot-message {
+            background-color: #e9ecef;
+            color: black;
+        }
+        .input-container {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+        #user-input {
+            flex-grow: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+        #user-input:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+        }
+        button {
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.2s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 10px;
+            font-style: italic;
+            color: #666;
+        }
+        .error-message {
+            color: #dc3545;
+            text-align: center;
+            margin: 10px 0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="header">
+            <h2>Career Guide Assistant</h2>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message-container">
+                <div class="message bot-message">Hello! I'm your career guide assistant. How can I help you with your career-related questions?</div>
+            </div>
+        </div>
+        <div class="loading" id="loading">Processing your request...</div>
+        <div class="error-message" id="error-message"></div>
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Type your question here..." autocomplete="off">
+            <button id="send-button" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const inputField = document.getElementById('user-input');
+        const sendButton = document.getElementById('send-button');
+        const errorMessage = document.getElementById('error-message');
+
+        function addMessage(message, isUser, confidence = null) {
+            const messagesDiv = document.getElementById('chat-messages');
+            const containerDiv = document.createElement('div');
+            containerDiv.className = 'message-container';
+            
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
+            messageDiv.textContent = message;
+            containerDiv.appendChild(messageDiv);
+            
+            if (!isUser && confidence !== null) {
+                const confidenceDiv = document.createElement('div');
+                confidenceDiv.className = 'confidence';
+                confidenceDiv.textContent = `Confidence: ${(confidence * 100).toFixed(1)}%`;
+                containerDiv.appendChild(confidenceDiv);
+            }
+            
+            messagesDiv.appendChild(containerDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function setLoading(isLoading) {
+            document.getElementById('loading').style.display = isLoading ? 'block' : 'none';
+            sendButton.disabled = isLoading;
+            inputField.disabled = isLoading;
+        }
+
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+            }, 5000);
+        }
+
+        async function sendMessage() {
+            const message = inputField.value.trim();
+            
+            if (message === '') return;
+            
+            addMessage(message, true);
+            inputField.value = '';
+            errorMessage.style.display = 'none';
+            setLoading(true);
+            
+            try {
+                // Changed from /api/chat to /chat
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: message })
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Server error');
+                }
+                
+                const data = await response.json();
+                
+                if (data.error) {
+                    showError(data.error);
+                } else {
+                    addMessage(data.response, false, data.confidence);
+                }
+            } catch (error) {
+                showError('Sorry, something went wrong. Please try again.');
+                console.error('Error:', error);
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        inputField.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && !inputField.disabled) {
+                sendMessage();
+            }
+        });
+
+        // Focus input field on page load
+        window.onload = function() {
+            inputField.focus();
+        };
+    </script>
+</body>
+</html>

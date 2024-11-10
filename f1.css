@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    /* Use Unsplash image URL here */
+    background-image: url('https://images.unsplash.com/photo-1506784365847-bbad939e9335');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #fff;
+    text-align: center;
+    position: relative; /* For positioning the back button */
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 50px;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: 2px solid #fff;  /* White border */
+    background-color: transparent; /* Transparent background */
+    color: #fff;  /* White text */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: #fff;  /* White background on hover */
+    color: #000;  /* Black text on hover */
+    transform: scale(1.1);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.skillset {
+    /* You can keep this class for extra button-specific styles if needed */
+}
+
+.dream-job {
+    /* Same as above */
+}
+
+.path {
+    /* Same as above */
+}
+
+/* Back button styling */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #fff;
+    color: #000;
+}

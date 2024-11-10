@@ -3,11 +3,11 @@
 
 <head>
     <title>Signup</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-    <form action="register_user.php" method="post">
+    <form action="login.php" method="get">
         <img src="images/logon.jpg">
         <h2 class="signupheading">Get Started Now</h2>
         <?php if (isset($_GET['error'])) { ?> <p class="error"><?php echo $_GET['error']; ?></p> <?php } ?>

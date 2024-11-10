@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Development Directory</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2d3436;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .platform-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .platform-card h2 {
+            color: #2d3436;
+            margin-bottom: 1rem;
+        }
+
+        .platform-card p {
+            color: #636e72;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .visit-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .programming {
+            background-color: #0984e3;
+        }
+
+        .programming:hover {
+            background-color: #0769b4;
+        }
+
+        .language {
+            background-color: #00b894;
+        }
+
+        .language:hover {
+            background-color: #009677;
+        }
+
+        .design {
+            background-color: #e17055;
+        }
+
+        .design:hover {
+            background-color: #d15a3f;
+        }
+
+        .business {
+            background-color: #6c5ce7;
+        }
+
+        .business:hover {
+            background-color: #5849c2;
+        }
+
+        .math {
+            background-color: #00cec9;
+        }
+
+        .math:hover {
+            background-color: #00b3b0;
+        }
+
+        .general {
+            background-color: #fd79a8;
+        }
+
+        .general:hover {
+            background-color: #e86a94;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Skill Development Platforms</h1>
+        <div class="platforms-grid">
+            <div class="platform-card">
+                <h2>LeetCode</h2>
+                <p>Master coding interviews with algorithmic challenges and programming problems.</p>
+                <a href="https://leetcode.com" class="visit-btn programming">Start Coding</a>
+            </div>
+            
+            <div class="platform-card">
+                <h2>Duolingo</h2>
+                <p>Learn new languages through interactive lessons and daily practice.</p>
+                <a href="https://www.duolingo.com" class="visit-btn language">Learn Languages</a>
+            </div>
+            
+            <div class="platform-card">
+                <h2>Figma</h2>
+                <p>Learn UI/UX design and collaborate on design projects in the browser.</p>
+                <a href="https://www.figma.com" class="visit-btn design">Start Designing</a>
+            </div>
+            
+            <div class="platform-card">
+                <h2>Coursera</h2>
+                <p>Access courses from top universities and companies worldwide.</p>
+                <a href="https://www.coursera.org" class="visit-btn business">Explore Courses</a>
+            </div>
+            
+            <div class="platform-card">
+                <h2>Khan Academy</h2>
+                <p>Free world-class education in math, science, and more.</p>
+                <a href="https://www.khanacademy.org" class="visit-btn math">Start Learning</a>
+            </div>
+            
+            <div class="platform-card">
+                <h2>Udemy</h2>
+                <p>Learn any skill with on-demand video courses from experts.</p>
+                <a href="https://www.udemy.com" class="visit-btn general">Browse Courses</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

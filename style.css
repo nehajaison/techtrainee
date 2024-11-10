@@ -1,5 +1,5 @@
 body {
-    background-image: url('../images/bglogin.jpg');
+    background-image: url('bglogin.jpg');
     background-position: center;
     /* Scale and zoom in the image */
     background-size: cover;
