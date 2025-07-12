@@ -74,7 +74,7 @@ TechTrainee is designed for three distinct user groups:
 
 ### Setup Instructions
 1. Clone the repository:
-   git clone https://github.com/yourusername/techtrainee.git
+   git clone https://github.com/nehajaison/techtrainee.git
    cd techtrainee
 
 2. Install required dependencies:
@@ -162,20 +162,6 @@ The AI model is trained using career guidance data and utilizes:
 - Safari 12+
 - Edge 79+
 
-## Contributing
-We welcome contributions to TechTrainee! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## Support
-For support, questions, or feedback:
-- Create an issue on GitHub
-- Email: support@techtrainee.com
-- Documentation: Available in the repository
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
